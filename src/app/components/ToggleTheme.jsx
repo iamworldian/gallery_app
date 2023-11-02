@@ -15,7 +15,7 @@ const ToggleTheme = () => {
 
   return (
     <div
-      className={`absolute md:lg:left-0 sm:top-0 flex align-bottom ${
+      className={`md:lg:left-0 sm:top-0 flex align-bottom ${
         isDarkTheme ? "text-white" : "text-black"
       }`}
     >

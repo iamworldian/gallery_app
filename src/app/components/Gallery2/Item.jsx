@@ -1,18 +1,16 @@
-import { forwardRef, CSSProperties, useContext } from 'react';
+import { useContext } from 'react';
 import { ImageGalleryContext } from '@/app/utils/GalleryContext';
 
 
-const Item = forwardRef(({style,item,index ,...props }, ref) => {
+const Item = ( props ) => {
     
     
-    const {id,selected, image_url_path} = item;
+    const {index,id,selected, image_url_path} = props;
     const { toggleItem } = useContext(ImageGalleryContext);
+ console.log(index,id,selected,image_url_path);
+   
 
-    const inlineStyles: CSSProperties = {
-        ...style,
-    };
-
-    return (<div ref={ref} className={`bg-white relative w-auto ${index === 0 ? 'row-span-2 col-span-2 border-4 border-dotted': 'border-2 border-slate-600'} rounded-3xl `} {...props}>
+    return (<div className={`bg-white relative rounded-3xl`}>
     {
         <div className={`absolute hover:opacity-90 h-full w-full bg-slate-300/80 z-10 ${selected ? '' : 'opacity-0'} rounded-3xl`}>
             <input
@@ -25,8 +23,8 @@ const Item = forwardRef(({style,item,index ,...props }, ref) => {
             />
         </div>
     }
-    <img src={image_url_path} alt="" className="z-1 rounded-3xl"/>
+    <img src={image_url_path} alt="" className="rounded-3xl object-contain"/>
   </div>)
-});
+}
 
 export default Item;
