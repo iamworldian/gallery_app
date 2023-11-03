@@ -5,7 +5,7 @@ function AddImage({ handleUploadImage }) {
 
     
   return (
-    <label className="w-full h-full justify-center flex flex-col">
+    <label className="justify-center flex flex-col m-4">
       <input
         type="file"
         accept="image/*"
