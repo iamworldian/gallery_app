@@ -74,7 +74,7 @@ const App = () => {
       </div>
       <div className={`flex flex-col w-full relative h-auto min-h-screen flex items-center justify-start ${isDarkTheme ? 'bg-slate-800 text-white' : 'bg-white text-black' }`}>
       
-        <div className={`h-auto w-5/6 rounded-xl flex flex-col items-center justify-center ${isDarkTheme ? 'bg-slate-700' : 'bg-slate-100/50 border-4 border-slate-400' } m-8`}>
+        <div className={`h-auto w-5/6 rounded-xl flex flex-col items-center justify-center ${isDarkTheme ? 'bg-slate-700 border-4 border-slate-500' : 'bg-slate-100/50 border-4 border-slate-400' } m-8`}>
           <Header/>
           <div className="w-3/4">
             <Gallery/>
