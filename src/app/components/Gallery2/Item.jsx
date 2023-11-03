@@ -10,9 +10,9 @@ const Item = ( props ) => {
  console.log(index,id,selected,image_url_path);
    
 
-    return (<div className={`bg-white relative rounded-3xl`}>
+    return (<div className={`bg-white relative rounded-xl`}>
     {
-        <div className={`absolute hover:opacity-90 h-full w-full bg-slate-300/80 z-10 ${selected ? '' : 'opacity-0'} rounded-3xl`}
+        <div className={`absolute hover:opacity-90 h-full w-full bg-slate-300/80 z-10 ${selected ? '' : 'opacity-0'} rounded-xl`}
         onClick={() => {toggleItem(id)}}
         >
             <input
@@ -25,7 +25,7 @@ const Item = ( props ) => {
             />
         </div>
     }
-    <img src={image_url_path} alt="" className="rounded-3xl object-cover aspect-square"/>
+    <img src={image_url_path} alt="" className="rounded-xl object-cover aspect-square"/>
   </div>)
 }
 

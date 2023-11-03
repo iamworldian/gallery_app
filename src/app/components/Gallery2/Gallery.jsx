@@ -35,7 +35,7 @@ export default function Gallery () {
     <SortableList onSortEnd={onSortEnd} className="grid grid-cols-1 lg:grid-cols-6 md:grid-cols-3 sm:grid-cols-2 gap-3 m-6" draggedItemClassName="dragged">
       {galleryItems.map((item,index) => (
         <SortableItem key={item.id}>
-          <div className={`cursor-move ${index === 0 ? 'row-span-1 col-span-1 sm:row-span-2 sm:col-span-2 border-4 border-dotted': 'border-2 border-slate-600'} rounded-3xl`}>
+          <div className={`cursor-move ${index === 0 ? 'row-span-1 col-span-1 sm:row-span-2 sm:col-span-2 border-4 border-yellow-500 border-dashed': 'border-2 border-slate-400'} rounded-2xl`}>
             <Item {...item} index={index}/>
           </div>
         </SortableItem>
