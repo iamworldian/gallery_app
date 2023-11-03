@@ -1,4 +1,4 @@
-import { FC, useState, useEffect } from "react";
+import {  useState, useEffect } from "react";
 import { ToastContainer, toast } from 'react-toastify';
 
 import { imageList } from "@/app/utils/data";
