@@ -25,7 +25,7 @@ const Item = ( props ) => {
                 onClick={(e) => {toggleItem(e,id)}}
             />
              
-             <span ><MdPreview className="absolute text-white text-3xl hover:text-black w-auto h-auto top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-100 z-20"/></span>
+             <span onClick={() => selectImage(index)}><p className="absolute text-white text-xl hover:text-black w-auto h-auto top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-100 z-20">Click</p></span>
              
         </div>
     }
