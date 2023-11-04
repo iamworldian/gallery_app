@@ -13,14 +13,14 @@ const Item = ( props ) => {
 
     return (<div className={`bg-white relative rounded-xl m-1`}>
     {
-        <div className={`absolute hover:opacity-50 h-full w-full bg-slate-700/80 z-10 ${selected ? 'opacity-80' : 'opacity-0'} rounded-xl`}
+        <div className={`absolute hover:opacity-80 h-full w-full bg-slate-500 hover:bg-yellow-600 z-10 ${selected ? 'opacity-90' : 'opacity-0'} rounded-xl`}
         onClick={() => selectImage(index)}
         >
             <input
                 type="checkbox"
                 name=""
                 id=""
-                className="absolute top-0 left-0 m-4 h-6 w-6 rounded-lg border-2 border-blue-500 accent-yellow-200 "
+                className="absolute top-0 left-0 m-4 h-6 w-6 rounded-lg border-2 border-blue-500 accent-yellow-200 bg-red-600"
                 checked={selected}
                 onClick={(e) => {toggleItem(e,id)}}
             />
