@@ -39,7 +39,7 @@ export default function Gallery () {
   const [index, setIndex] = useState(0);
 
   const selectImage = (idx) => {
-    console.log(idx);
+    //console.log(idx);
     setVisible(true);
     setIndex(idx);
   };

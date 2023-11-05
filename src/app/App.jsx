@@ -10,6 +10,7 @@ import Gallery from "@/app/components/Gallery2/Gallery";
 
 import 'react-photo-view/dist/react-photo-view.css'
 import 'react-toastify/dist/ReactToastify.css';
+import 'react-loading-skeleton/dist/skeleton.css'
 
 const App = () => {
   const [galleryItems , setGalleryItems] = useState(imageList);
