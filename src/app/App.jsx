@@ -32,14 +32,14 @@ const App = () => {
 
   // toggle item check / uncheck
   function toggleItem(e,id){
-    
+    e.stopPropagation();
     const newItems = galleryItems.map((item) => {
       if(item.id === id){
         return {...item, selected: !item.selected };
       }else return item;
     });
     setGalleryItems(newItems);
-    e.stopPropagation();
+    
   }
 
 
