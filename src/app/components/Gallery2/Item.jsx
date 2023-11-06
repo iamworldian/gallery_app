@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { MdPreview } from 'react-icons/md';
+import { MdPreview,MdAdsClick } from 'react-icons/md';
 import { BsTrashFill } from 'react-icons/bs';
 
 import { ImageGalleryContext } from '@/app/utils/GalleryContext';
@@ -36,7 +36,7 @@ const Item = ( props ) => {
                 </span>
             </div>
              
-             <span onClick={() => selectImage(index)}><p className="absolute text-black text-xl hover:border-2 hover:border-black w-auto h-auto top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-100 z-20 p-1">{id} {index}</p></span>
+             <span onClick={() => selectImage(index)}><p className="absolute text-black text-2xl transition hover:text-3xl w-auto h-auto top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-100 z-20 p-4 cursor-pointer"><MdAdsClick/></p></span>
 
              
              
