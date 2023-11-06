@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import { MdPreview } from 'react-icons/md';
+import { BsTrashFill } from 'react-icons/bs';
 
 import { ImageGalleryContext } from '@/app/utils/GalleryContext';
 import LazyImage from './LadyLoadImage';
@@ -9,27 +10,35 @@ const Item = ( props ) => {
     
     
     const {index,id,selected, image_url_path,selectImage} = props;
-    const { toggleItem } = useContext(ImageGalleryContext);
+    const { toggleItem,handleSingleDelete } = useContext(ImageGalleryContext);
  
 
     return (<div className={`bg-white relative rounded-xl m-1`}>
     {
-        <div className={`absolute hover:opacity-80 h-full w-full bg-slate-500 hover:bg-yellow-600 z-10 ${selected ? 'opacity-90' : 'opacity-0'} rounded-xl`}
+        <div className={`absolute hover:opacity-80 h-full w-full bg-slate-500 hover:bg-yellow-300 z-10 ${selected ? 'opacity-90' : 'opacity-0'} rounded-xl`}
         onClick={() => selectImage(index)}
         >
-            <input
-                type="checkbox"
-                name=""
-                id=""
-                className="absolute top-0 left-0 m-4 h-6 w-6 rounded-lg border-2 border-blue-500 accent-yellow-200 bg-red-600"
-                checked={selected}
-                onClick={(e) => {
-                    toggleItem(e,id)
-                }}
-                onChange={(e) => e.stopPropagation()}
-            />
+            
+            <div className='w-full absolute flex justify-between p-2'>
+                <input
+                    type="checkbox"
+                    name=""
+                    id=""
+                    className="h-6 w-6 rounded-lg border-2 accent-yellow-800 bg-red-800"
+                    checked={selected}
+                    onClick={(e) => {
+                        toggleItem(e,id)
+                    }}
+                    onChange={(e) => e.stopPropagation()}
+                />
+                <span className='text-2xl text-red-500 hover:text-black'>
+                    <button onClick={(e) => handleSingleDelete(e,id)}><BsTrashFill/></button>
+                </span>
+            </div>
              
-             <span onClick={() => selectImage(index)}><p className="absolute text-white text-xl hover:text-black w-auto h-auto top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-100 z-20">Click</p></span>
+             <span onClick={() => selectImage(index)}><p className="absolute text-black text-xl hover:border-2 hover:border-black w-auto h-auto top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-100 z-20 p-1">{id} {index}</p></span>
+
+             
              
         </div>
     }

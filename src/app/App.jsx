@@ -27,18 +27,30 @@ const App = () => {
   function handleDelete(){
     const newItems = galleryItems.filter(item => item.selected != true);
     setGalleryItems(newItems);
+    
     toast('Images Deleted');
+    console.log(newItems);
+  }
+
+  function handleSingleDelete(e,id) {
+    console.log(galleryItems);
+    const newItems = galleryItems.filter(item => item.id != id);
+    setGalleryItems(newItems);
+    console.log(newItems);
+    toast('Single Image Deleted');
+    e.stopPropagation();
   }
 
   // toggle item check / uncheck
   function toggleItem(e,id){
-    e.stopPropagation();
+   
     const newItems = galleryItems.map((item) => {
       if(item.id === id){
         return {...item, selected: !item.selected };
       }else return item;
     });
     setGalleryItems(newItems);
+    e.stopPropagation();
     
   }
 
@@ -50,6 +62,7 @@ const App = () => {
     toDelete , setToDelete,
     handleDelete,
     toggleItem,
+    handleSingleDelete
 
   }
 

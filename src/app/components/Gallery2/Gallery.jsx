@@ -15,18 +15,38 @@ import AddImage from './AddImage'
 export default function Gallery () {
   const { galleryItems, setGalleryItems } = useContext(ImageGalleryContext);
 
-  
+  const newId = () => {
+    let len = galleryItems.length;
+
+    for(let i = 0 ; i < len ; i++){
+      let flag = false;
+      for(let item of galleryItems){
+        //console.log('item', item);
+        if(item.id === i){
+          flag = true;
+          break;
+        }
+      }
+
+      if(!flag)return i;
+    }
+
+    return len;
+  }
   const handleUploadImage = (event) => {
     const file = event.target.files[0];
+   
+
     if (file) {
       const newImage = {
-        id: galleryItems.length + 1,
+        id: newId(),
         image_url_path: URL.createObjectURL(file),
         selected: false,
       };
       setGalleryItems([...galleryItems, newImage]);
     }
 
+    event.target.value = null;
     toast(`Image Added`);
   };
 

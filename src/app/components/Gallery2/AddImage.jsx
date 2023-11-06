@@ -11,6 +11,7 @@ function AddImage({ handleUploadImage }) {
         accept="image/*"
         onChange={handleUploadImage}
         className="hidden"
+        multiple
       />
       <div className="md:flex flex-col items-center">
         <ImImage className="text-2xl" />
